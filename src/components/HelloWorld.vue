@@ -1,5 +1,9 @@
 <template>
-  <div v-show="OK">Hello!</div>
+  <ul id="eexample-1">
+    <li v-for="item in items" :key="item.message">
+      {{item.message}}
+    </li>
+  </ul>
 </template>
 
 <script>
@@ -7,10 +11,11 @@ export default {
   name: 'HelloWorld',
   data () {
     return {
-      styleObject: {
-        color: 'red',
-        fontSize: '13px'
-      },
+      items: [
+        {message: "Foo"},
+        {message: "Bar"},
+        {message: "Baz"},
+      ]
     }
   },
   computed: {
