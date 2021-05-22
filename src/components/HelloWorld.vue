@@ -1,5 +1,5 @@
 <template>
-  <div v-bind:class="[activeClass, errorClass]"></div>
+  <div v-bind:class="[isActive ? activeClass : '', errorClass]"></div>
 </template>
 
 <script>
