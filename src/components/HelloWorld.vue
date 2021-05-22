@@ -1,7 +1,7 @@
 <template>
-  <ul id="eexample-1">
-    <li v-for="item in items" :key="item.message">
-      {{item.message}}
+  <ul id="v-for-object" class="demo">
+    <li v-for="value in object" :key="value">
+      {{value}}
     </li>
   </ul>
 </template>
@@ -11,11 +11,11 @@ export default {
   name: 'HelloWorld',
   data () {
     return {
-      items: [
-        {message: "Foo"},
-        {message: "Bar"},
-        {message: "Baz"},
-      ]
+      object: {
+        title : 'How to do lists in Vue',
+        author : 'Jane Doe',
+        publisheedAt:'2016-04-10'
+      }
     }
   },
   computed: {
