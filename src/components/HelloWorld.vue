@@ -1,8 +1,5 @@
 <template>
-  <div
-    class="static"
-    v-bind:class="{ active: isActive, 'text-danger': hasError }"
-  ></div>
+  <div v-bind:class="classObject"></div>
 </template>
 
 <script>
@@ -10,9 +7,16 @@ export default {
   name: 'HelloWorld',
   data () {
     return {
-      msg: 'Welcome to Your Vue.js App',
-      isActive: false,
-      hasError: true
+      isActive: true,
+      error: null,
+    }
+  },
+  computed: {
+    classObject: function() {
+      return {
+        active: this.isActive && !this.error,
+        'test-danger': this.error && this.error.type === 'fatal'
+      }
     }
   }
 }
