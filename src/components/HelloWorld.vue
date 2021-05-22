@@ -1,7 +1,7 @@
 <template>
-  <div id="example-1">
-    <button v-on:click="say('hi')">Greet</button>
-  </div>
+    <div id="app">
+      <input type="text" v-on:keyup.enter="alert">
+    </div>
 </template>
 
 <script>
@@ -15,6 +15,11 @@ export default {
   computed: {
     say: function(say) {
       alert(say)
+    }
+  },
+  methods: {
+    alert() {
+      alert("アラート！")
     }
   }
 }
