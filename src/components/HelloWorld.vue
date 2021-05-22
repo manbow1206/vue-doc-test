@@ -1,7 +1,6 @@
 <template>
   <div id="example-1">
-    <button v-on:click="counter += 2">Add 1</button>
-    <p>The button above has been clicked {{ counter }} times.</p>
+    <button v-on:click="greet">Greet</button>
   </div>
 </template>
 
@@ -10,14 +9,15 @@ export default {
   name: 'HelloWorld',
   data () {
     return {
-      counter: 0
+      name: 'vue.js'
     }
   },
   computed: {
-    evenNumbers: function() {
-      return this.numbers.filter(function (number) {
-        return number % 2 === 0
-      })
+    greet: function (event) {
+      alert('Hello' + this.name + '!')
+      if (event) {
+        alert(event.target.tagName)
+      }
     }
   }
 }
