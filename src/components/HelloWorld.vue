@@ -1,7 +1,5 @@
 <template>
-    <div id="app">
-      <input type="text" v-on:keyup.enter="alert">
-    </div>
+
 </template>
 
 <script>
@@ -9,7 +7,7 @@ export default {
   name: 'HelloWorld',
   data () {
     return {
-      name: 'vue.js'
+      message: 'vue.js'
     }
   },
   computed: {
