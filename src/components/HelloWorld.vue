@@ -1,7 +1,7 @@
 <template>
 <ul id="example1">
-  <li v-for="n in evenNumbers" :key=n>
-    {{ n }}
+  <li v-for="todo in todos" v-if="!todo.isComplete">
+    {{ todo }}
   </li>
 </ul>
 </template>
