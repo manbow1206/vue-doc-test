@@ -1,5 +1,5 @@
 <template>
-  <div v-bind:class="[isActive ? activeClass : '', errorClass]"></div>
+  <div v-bind:style="{color : activeColor, fontSize : fontSize + 'px'}"></div>
 </template>
 
 <script>
@@ -7,8 +7,8 @@ export default {
   name: 'HelloWorld',
   data () {
     return {
-      activeClass: 'active',
-      errorClass: 'text-danger',
+      activvColor: 'red',
+      errorSize: 30,
     }
   },
   computed: {
