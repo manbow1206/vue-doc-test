@@ -2,10 +2,8 @@
   <div id="app">
     <!-- <img src="./assets/logo.png">
     <router-view/> -->
-    <span>Multiline message is:</span>
-    <p style="white-space: pre-line;">{{ message }}</p>
-    <br>
-    <textarea v-model="message" placeholder="add multiple lines"></textarea>
+    <input type="checkbox" id="checkbox" v-model="checked">
+    <label for="checkbox">{{ checked }}</label>
   </div>
 </template>
 
