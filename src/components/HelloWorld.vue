@@ -1,6 +1,6 @@
 <template>
   <div id="example-1">
-    <button v-on:click="greet">Greet</button>
+    <button v-on:click="say('hi')">Greet</button>
   </div>
 </template>
 
@@ -13,11 +13,8 @@ export default {
     }
   },
   computed: {
-    greet: function (event) {
-      alert('Hello' + this.name + '!')
-      if (event) {
-        alert(event.target.tagName)
-      }
+    say: function(say) {
+      alert(say)
     }
   }
 }
