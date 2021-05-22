@@ -1,9 +1,8 @@
 <template>
-<ul id="example1">
-  <li v-for="todo in todos" v-if="!todo.isComplete">
-    {{ todo }}
-  </li>
-</ul>
+  <div id="example-1">
+    <button v-on:click="counter += 2">Add 1</button>
+    <p>The button above has been clicked {{ counter }} times.</p>
+  </div>
 </template>
 
 <script>
@@ -11,7 +10,7 @@ export default {
   name: 'HelloWorld',
   data () {
     return {
-      numbers: [1,2,3,4,5,6]
+      counter: 0
     }
   },
   computed: {
