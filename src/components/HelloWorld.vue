@@ -1,5 +1,5 @@
 <template>
-  <div v-bind:style="{color : activeColor, fontSize : fontSize + 'px'}"></div>
+  <div v-bind:style="styleObject"></div>
 </template>
 
 <script>
@@ -7,8 +7,10 @@ export default {
   name: 'HelloWorld',
   data () {
     return {
-      activvColor: 'red',
-      errorSize: 30,
+      styleObject: {
+        color: 'red',
+        fontSize: '13px'
+      },
     }
   },
   computed: {
