@@ -1,15 +1,14 @@
 <template>
-  <div id="app">
-    <!-- <img src="./assets/logo.png">
-    <router-view/> -->
-    <input type="checkbox" id="checkbox" v-model="checked">
-    <label for="checkbox">{{ checked }}</label>
-  </div>
+  <!-- <input v-model.lazy="msg"> -->
+  <input v-model.number="age" type="number">
+  <!-- <input v-model.trim="msg""> -->
 </template>
 
 <script>
 export default {
-  name: 'App'
+   data: {
+    checkedNames: []
+  }
 }
 </script>
 
