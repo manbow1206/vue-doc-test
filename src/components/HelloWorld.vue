@@ -1,7 +1,7 @@
 <template>
   <ul id="v-for-object" class="demo">
-    <li v-for="value in object" :key="value">
-      {{value}}
+    <li v-for="(value, name, index) in object" :key="value.name">
+      {{index}} : {{name}} : {{value}}
     </li>
   </ul>
 </template>
