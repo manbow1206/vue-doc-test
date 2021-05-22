@@ -1,9 +1,9 @@
 <template>
-  <ul id="v-for-object" class="demo">
-    <li v-for="(value, name, index) in object" :key="value.name">
-      {{index}} : {{name}} : {{value}}
-    </li>
-  </ul>
+<ul id="example1">
+  <li v-for="n in evenNumbers" :key=n>
+    {{ n }}
+  </li>
+</ul>
 </template>
 
 <script>
@@ -11,19 +11,14 @@ export default {
   name: 'HelloWorld',
   data () {
     return {
-      object: {
-        title : 'How to do lists in Vue',
-        author : 'Jane Doe',
-        publisheedAt:'2016-04-10'
-      }
+      numbers: [1,2,3,4,5,6]
     }
   },
   computed: {
-    classObject: function() {
-      return {
-        active: this.isActive && !this.error,
-        'test-danger': this.error && this.error.type === 'fatal'
-      }
+    evenNumbers: function() {
+      return this.numbers.filter(function (number) {
+        return number % 2 === 0
+      })
     }
   }
 }
