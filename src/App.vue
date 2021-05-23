@@ -1,13 +1,16 @@
 <template>
-  <!-- <input v-model.lazy="msg"> -->
-  <input v-model.number="age" type="number">
-  <!-- <input v-model.trim="msg""> -->
+  <Lab propData="Hello Vue"></Lab>
 </template>
 
 <script>
+import Lab from './components/Lab.vue'
+
 export default {
    data: {
     checkedNames: []
+  },
+  components: {
+    Lab
   }
 }
 </script>
