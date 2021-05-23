@@ -1,68 +1,27 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>Dynamic Components Example</title>
-    <script src="https://unpkg.com/vue"></script>
-    <style>
-      .tab-button {
-        padding: 6px 10px;
-        border-top-left-radius: 3px;
-        border-top-right-radius: 3px;
-        border: 1px solid #ccc;
-        cursor: pointer;
-        background: #f0f0f0;
-        margin-bottom: -1px;
-        margin-right: -1px;
-      }
-      .tab-button:hover {
-        background: #e0e0e0;
-      }
-      .tab-button.active {
-        background: #e0e0e0;
-      }
-      .tab {
-        border: 1px solid #ccc;
-        padding: 10px;
-      }
-    </style>
-  </head>
-  <body>
-    <div id="dynamic-component-demo" class="demo">
-      <button
-        v-for="tab in tabs"
-        v-bind:key="tab"
-        v-bind:class="['tab-button', { active: currentTab === tab }]"
-        v-on:click="currentTab = tab"
-      >
-        {{ tab }}
-      </button>
+<template>
+  <Lab prop-data="Vue.js !"></Lab>
+</template>
 
-      <component v-bind:is="currentTabComponent" class="tab"></component>
-    </div>
+<script>
+import Lab from './components/Lab.vue'
 
-    <script>
-      Vue.component("tab-home", {
-        template: "<div>Home component</div>"
-      });
-      Vue.component("tab-posts", {
-        template: "<div>Posts component</div>"
-      });
-      Vue.component("tab-archive", {
-        template: "<div>Archive component</div>"
-      });
+export default {
+   data: {
+    checkedNames: []
+  },
+  components: {
+    Lab
+  }
+}
+</script>
 
-      new Vue({
-        el: "#dynamic-component-demo",
-        data: {
-          currentTab: "Home",
-          tabs: ["Home", "Posts", "Archive"]
-        },
-        computed: {
-          currentTabComponent: function() {
-            return "tab-" + this.currentTab.toLowerCase();
-          }
-        }
-      });
-    </script>
-  </body>
-</html>
+<style>
+#app {
+  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #2c3e50;
+  margin-top: 60px;
+}
+</style>
