@@ -7,7 +7,15 @@
 
 <script>
 export default {
-    props: ['propData'],
+    props: {
+        title: String,
+        likes: Number,
+        isPublished: Boolean,
+        commentIds: Array,
+        author: Object,
+        callback: Function,
+        contactsPromise: Promise
+    },
     data(){
         return {
             // title: "Header",
