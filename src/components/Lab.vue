@@ -7,18 +7,22 @@
 
 <script>
 export default {
-    props: ['propData'],
-    data(){
-        return {
-            text: "Hello Vue.js!"
-        }
-    }
+  props: ['post'],
+  template: `
+    <div class="blog-post">
+      <h3>{{ post.title }}</h3>
+      <button v-on:click="$emit('enlarge-text')">
+        Enlarge text
+      </button>
+      <div v-html="post.content"></div>
+    </div>
+  `
 }
 </script>
 
 <style scoped>
 div{
-    border: 2px solid teal
+    border: 2px solid
 }
 h1{
     color: teal

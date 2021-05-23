@@ -1,5 +1,14 @@
 <template>
-  <Lab propData="Hello Vue"></Lab>
+<div id="blog-posts-events-demo">
+  <div :style="{ fontSize: postFontSize + 'em' }">
+    <blog-post
+      v-for="post in posts"
+      v-bind:key="post.id"
+      v-bind:post="post"
+      v-on:enlarge-text="postFontSize += 0.1"
+    ></blog-post>
+  </div>
+</div>
 </template>
 
 <script>
