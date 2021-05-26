@@ -1,12 +1,16 @@
 <template>
-  <div class="home">
     <Lab>
-      <template v-slot>Child Components</template>
+      <template v-slot:header>
+        <h1>Here might be a page title</h1>
+      </template>
+
+      <p>A paragraph for the main content.</p>
+      <p>And another one.</p>
+
+      <template v-slot:footer>
+        <p>Here's some contact info</p>
+      </template>
     </Lab>
-    <Lab>
-      <template v-slot></template>
-    </Lab>
-  </div>
 </template>
 <script>
 import Lab from './components/Lab.vue'

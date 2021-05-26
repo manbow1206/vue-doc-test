@@ -1,7 +1,15 @@
 <template>
-<button type="submit">
-  <slot>Submit</slot>
-</button>
+  <div class="container">
+    <header>
+      <slot name="header"></slot>
+    </header>
+    <main>
+      <slot></slot>
+    </main>
+    <footer>
+      <slot name="footer"></slot>
+    </footer>
+  </div>
 </template>
 <style>
 </style>
