@@ -4,7 +4,7 @@
       <template v-slot>Child Components</template>
     </Lab>
     <Lab>
-      <template v-slot:add>渋谷</template>
+      <template v-slot></template>
     </Lab>
   </div>
 </template>
