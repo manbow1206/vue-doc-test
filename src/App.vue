@@ -1,8 +1,6 @@
 <template>
-    <Lab>
-      <template v-slot:default="slotProps">
+    <Lab v-slot="slotProps">
         {{ slotProps.user.lastName }}
-      </template>
     </Lab>
 </template>
 <script>
