@@ -1,15 +1,11 @@
 <template>
-<div class="container">
-  <header>
-    <h1>Here might be a page title</h1>
-  </header>
-  <main>
-    <p>A paragraph for the main content.</p>
-    <p>And another one.</p>
-  </main>
-  <footer>
-    <p>Here's some contact info</p>
-  </footer>
+<div id="demo">
+  <button v-on:click="show = !show">
+    Toggle
+  </button>
+  <transition name="fade">
+    <p v-if="show">hello</p>
+  </transition>
 </div>
 </template>
 
@@ -17,12 +13,16 @@
 export default {
   data() {
     return {
-      user: {
-        lastName: 'テスト'
-      }
+      show: true
     }
   }
 }
 </script>
 <style>
+.fade-enter-active, .fade-leave-active {
+  transition: opacity .5s;
+}
+.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+  opacity: 0;
+}
 </style>
