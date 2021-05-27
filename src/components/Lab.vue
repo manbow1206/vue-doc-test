@@ -1,7 +1,7 @@
 <template>
 <div id="example-2">
   <button @click="show = !show">Toggle show</button>
-  <transition name="bounce">
+  <transition :duration="{ enter: 500, leave: 800 }" name="bounce">
     <p v-if="show">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris facilisis enim libero, at lacinia diam fermentum id. Pellentesque habitant morbi tristique senectus et netus.</p>
   </transition>
 </div>
