@@ -1,9 +1,5 @@
 <template>
-<transition>
-  <button v-bind:key="docState">
-    {{ buttonMessage }}
-  </button>
-</transition>
+  <h1>{{ blogTitle }}</h1>
 </template>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/velocity/1.2.3/velocity.min.js"></script>
@@ -14,15 +10,9 @@ export default {
       show: true
     }
   },
-  computed: {
-    buttonMessage: function () {
-      switch (this.docState) {
-        case 'saved': return 'Edit'
-        case 'edited': return 'Save'
-        case 'editing': return 'Cancel'
-      }
-    }
-  }
+  render: function (createElement) {
+    return createElement('h1', this.blogTitle)
+　}
 }
 </script>
 <style>

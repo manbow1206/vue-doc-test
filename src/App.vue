@@ -1,11 +1,12 @@
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.14.1/lodash.min.js"></script>
 <template>
-<div id="list-demo">
-  <button v-on:click="add">Add</button>
-  <button v-on:click="remove">Remove</button>
-  <transition-group name="list" tag="p">
-    <span v-for="item in items" v-bind:key="item" class="list-item">
+
+<div id="flip-list-demo" class="demo">
+  <button v-on:click="shuffle">Shuffle</button>
+  <transition-group name="flip-list" tag="ul">
+    <li v-for="item in items" v-bind:key="item">
       {{ item }}
-    </span>
+    </li>
   </transition-group>
 </div>
 </template>
@@ -20,28 +21,14 @@ export default {
     }
   },
   methods: {
-    randomIndex: function () {
-      return Math.floor(Math.random() * this.items.length)
-    },
-    add: function () {
-      this.items.splice(this.randomIndex(), 0, this.nextNum++)
-    },
-    remove: function () {
-      this.items.splice(this.randomIndex(), 1)
-    },
+    shuffle: function() {
+      this.items = _.shuffle(this.items)
+    }
   }
 }
 </script>
 <style>
-.list-item {
-  display: inline-block;
-  margin-right: 10px;
-}
-.list-enter-active, .list-leave-active {
-  transition: all 1s;
-}
-.list-enter, .list-leave-to /* .list-leave-active for below version 2.1.8 */ {
-  opacity: 0;
-  transform: translateY(30px);
+.flip-list-move {
+  transition: transform 1s;
 }
 </style>
