@@ -16,10 +16,14 @@ var app = new Vue({
   data: {
     message: 'Hello World'
   },
+  methods: {
+    alert: function() {
+      alert('click')
+    }
+  },
   render: function(createElement){
-    return createElement('h1', { class: {
-      foo: this.isActive,
-      bar: this.isFalse
+    return createElement('h1', { on: {
+      click: this.alert,
     }},this.message)
   }
 })
