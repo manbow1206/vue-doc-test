@@ -17,7 +17,10 @@ var app = new Vue({
     message: 'Hello World'
   },
   render: function(createElement){
-    return createElement('h1', { style: 'background-color:red;color:white;'},this.message)
+    return createElement('h1', { class: {
+      foo: this.isActive,
+      bar: this.isFalse
+    }},this.message)
   }
 })
 
